@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHandler} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {AppModule} from '../app.module';
 
-
-@Injectable({
-  providedIn: AppModule
-})
+@Injectable(
+//   {
+//   providedIn: 'root'
+// }
+)
 export class CryptoService {
   crypto: any;
- constructor(http: HttpClient) {
+ constructor(private http: HttpClient) {
     http.get('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,JPY,EURn')
       // Call map on the response observable to get the parsed people object
       .pipe(map(res => res))

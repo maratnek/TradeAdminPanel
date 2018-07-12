@@ -5,12 +5,12 @@ import {CryptoService} from '../../service/crypto.service';
   selector: 'app-panel',
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss'],
-  // providers: [CryptoService]
+  providers: [CryptoService]
 })
 export class PanelComponent implements OnInit {
 
   constructor(private cryptoServ: CryptoService) {
-    console.log(cryptoServ.getCrypto());
+    // console.log(cryptoServ.getCrypto());
   }
 
   ngOnInit() {

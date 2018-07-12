@@ -10,10 +10,12 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import {CryptoService} from './service/crypto.service';
 
+import {HttpClient,HttpHandler} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
-    PanelComponent
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,9 @@ import {CryptoService} from './service/crypto.service';
     // CryptoService,
   ],
   providers: [
-    // CryptoService
+    CryptoService,
+    HttpClient,
+    HttpHandler,
   ],
   bootstrap: [AppComponent]
 })
